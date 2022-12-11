@@ -1,0 +1,14 @@
+title: final stages
+dependencies:
+  - stage: stage-a
+  - stage: stage-b
+  - stage: stage-c
+steps:
+  - test:
+      - test -f /stage-a/a
+      - test -f /stage-b/b
+      - test -f /stage-c/c
+      - test -f /stage-c/d
+finalize:
+  from: /
+  to: /

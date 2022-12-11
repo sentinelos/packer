@@ -1,0 +1,102 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    ":dependencyDashboard",
+    ":gitSignOff",
+    ":semanticCommits",
+    ":semanticCommitScope(deps)",
+    "schedule:earlyMondays"
+  ],
+  "enabledManagers": [
+    "regex",
+    "dockerfile",
+    "gomod"
+  ],
+  "dependencyDashboardTitle": "Dependencies Dashboard",
+  "dependencyDashboardHeader": "This issue lists chores and detected dependencies :wave:",
+  "dependencyDashboardLabels": [
+    "bot",
+    "dependencies"
+  ],
+  "branchPrefix": "deps/",
+  "prHeader": "Chore Dependencies Request",
+  "labels": [
+    "bot",
+    "dependencies",
+    "status/0-triage",
+    "area/image",
+    "priority/p2"
+  ],
+  "semanticCommitType": "chore",
+  "commitMessageAction": "",
+  "dockerfile": {
+    "fileMatch": [
+      "^Containerfile$"
+    ]
+  },
+  "gomod": {
+    "fileMatch": [
+      "^go\\.mod$"
+    ],
+    "commitMessageTopic": "pkg {{depName}}"
+  },
+  "regexManagers": [
+    {
+      "description": "Bump alpine container image in constants.go file",
+      "fileMatch": [
+        "pkg/constants/constants.go"
+      ],
+      "matchStrings": [
+        "\\/\\/\\s+renovate: datasource=(?<datasource>.*?)(?:\\s+extractVersion=(?<extractVersion>.+?))?(?:\\s+versioning=(?<versioning>.+?))?\\s+depName=(?<depName>.+?)?\\s.*Image\\s+=\\s+\\\"docker.io\\/alpine:(?<currentValue>.+?)\\\""
+      ],
+      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Bump container images",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "groupName": "container images"
+    },
+    {
+      "description": "Bump go packages",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchDatasources": [
+        "go"
+      ],
+      "groupName": "go packages",
+      "labels": [
+        "bot",
+        "dependencies",
+        "status/0-triage",
+        "area/go",
+        "area/package",
+        "priority/p2"
+      ]
+    },
+    {
+      "description": "Bump go version",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchDatasources": [
+        "golang-version"
+      ],
+      "groupName": "go version",
+      "labels": [
+        "bot",
+        "dependencies",
+        "status/0-triage",
+        "area/go",
+        "priority/p2"
+      ]
+    }
+  ]
+}

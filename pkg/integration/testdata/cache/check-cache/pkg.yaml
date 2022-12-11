@@ -1,0 +1,10 @@
+title: check-cache
+dependencies:
+  - stage: fill-cache
+steps:
+  - cache: /.cache
+    prepare:
+      - "[ -e /.cache/foo ]"
+finalize:
+  from: /pkg
+  to: /

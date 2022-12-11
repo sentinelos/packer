@@ -1,0 +1,8 @@
+*
+!cmd
+!pkg
+!go.mod
+!go.sum
+!main.go
+!.golangci.yml
+!.markdownlint.json

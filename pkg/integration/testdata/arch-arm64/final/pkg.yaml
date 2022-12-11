@@ -1,0 +1,11 @@
+title: final aarch64
+steps:
+  - test:
+      - test "${BUILD:-x}" = "aarch64-linux"
+      - test "${HOST:-x}" = "aarch64-linux"
+      - test "${ARCH:-x}" = "aarch64"
+      - test "${TARGET:-x}" = "aarch64-sentinelos-linux"
+      - test `uname -m` = "aarch64"
+finalize:
+  from: /
+  to: /

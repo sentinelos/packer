@@ -1,0 +1,41 @@
+---
+run:
+  - name: docker-amd64
+    runner: docker
+    platform: linux/amd64
+    target: final
+    expect: success
+  - name: docker-arm64
+    runner: docker
+    platform: linux/arm64
+    target: final
+    expect: success
+  - name: buildkit
+    runner: buildkit
+    target: final
+    expect: success
+  - name: llb-amd64
+    runner: llb
+    platform: linux/amd64
+    target: final
+    expect: success
+  - name: llb-arm64
+    runner: llb
+    platform: linux/arm64
+    target: final
+    expect: success
+  - name: validate
+    runner: validate
+    expect: success
+  - name: eval-local
+    runner: eval
+    target: final
+    template: "<<{{ .TOPLEVEL }}>>"
+    expect: success
+    expectStdout: "<<toplevel>>"
+  - name: eval-pkg
+    runner: eval
+    target: vars-yaml-0
+    template: "<<{{ .PACKAGELEVEL }}>>"
+    expect: success
+    expectStdout: "<<toplevel packagelevel>>"

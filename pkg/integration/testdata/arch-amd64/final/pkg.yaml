@@ -1,0 +1,11 @@
+title: final x86_64
+steps:
+  - test:
+      - test "${BUILD:-x}" = "x86_64-linux"
+      - test "${HOST:-x}" = "x86_64-linux"
+      - test "${ARCH:-x}" = "x86_64"
+      - test "${TARGET:-x}" = "x86_64-sentinelos-linux"
+      - test `uname -m` = "x86_64"
+finalize:
+  from: /
+  to: /

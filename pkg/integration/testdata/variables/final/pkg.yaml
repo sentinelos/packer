@@ -1,0 +1,19 @@
+title: final variables
+dependencies:
+  - stage: global-vars
+  - stage: std-vars
+  - stage: local-vars
+  - stage: override
+  - stage: vars-yaml-0
+steps:
+  - test:
+      - test -f /result/global_A
+      - test -f /result/global_B
+      - test -f /result/artifacts
+      - test -d /result/toolchain
+      - test -f /result/toplevel
+      - test -f /result/toplevel-toplevel-packagelevel
+      - test -f /result/testtag
+finalize:
+  from: /
+  to: /

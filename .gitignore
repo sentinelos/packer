@@ -1,0 +1,13 @@
+*.apk
+*.gz
+*.tgz
+*.bz2
+*.tbz2
+*.zip
+*.tags
+*.xz
+*.part
+*.tar
+*.log
+.idea/
+.vscode/
