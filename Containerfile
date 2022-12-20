@@ -8,7 +8,7 @@ FROM ghcr.io/sentinelos/certificates:2022-10-11 AS certificates
 FROM ghcr.io/sentinelos/fhs:0.0.1 AS fhs
 
 # runs markdownlint
-FROM docker.io/node:19.2.0-alpine3.16 AS lint-markdown
+FROM docker.io/node:19.3.0-alpine3.16 AS lint-markdown
 WORKDIR /src
 RUN npm i -g markdownlint-cli@0.32.2
 RUN npm i sentences-per-line@0.2.1
