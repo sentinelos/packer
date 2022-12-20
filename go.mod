@@ -12,6 +12,7 @@ require (
 	github.com/containerd/containerd v1.6.14
 	github.com/emicklei/dot v1.2.0
 	github.com/google/go-github/v35 v35.3.0
+	github.com/google/go-github/v48 v48.2.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/moby/buildkit v0.10.6
 	github.com/opencontainers/go-digest v1.0.0
@@ -22,6 +23,7 @@ require (
 	golang.org/x/oauth2 v0.3.0
 	golang.org/x/sync v0.1.0
 	gopkg.in/yaml.v2 v2.4.0
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
@@ -68,5 +70,4 @@ require (
 	google.golang.org/grpc v1.51.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
