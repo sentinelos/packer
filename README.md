@@ -10,15 +10,12 @@ can be exported as container image.
 ## Roadmap
 
 - Tests
-- Dependency resolution
-- Leverage labels for things like:
-    - Switching the base dir install command (we default to alpine apk install for now).
-      We could add a label on the packer container `packer.io.base.distro=[alpine,ubuntu,centos,etc.]`
+- Cleanup
 
 ## Usage
 
 Given directory structure with `Pkgfile` and `pkg.yaml`
-(see [tools repository](https://github.com/sentinelos/pkgs) as an example),build can be triggered using following
+(see [packages repository](https://github.com/sentinelos/packages) as an example), build can be triggered using following
 commands:
 
 - via `nerdctl`:
