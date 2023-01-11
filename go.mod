@@ -12,7 +12,7 @@ require (
 	github.com/containerd/containerd v1.6.14
 	github.com/emicklei/dot v1.2.0
 	github.com/google/go-github/v35 v35.3.0
-	github.com/google/go-github/v48 v48.2.0
+	github.com/google/go-github/v49 v49.1.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/moby/buildkit v0.10.6
 	github.com/opencontainers/go-digest v1.0.0
