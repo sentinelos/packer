@@ -1,9 +1,11 @@
 module github.com/sentinelos/packer
 
-go 1.19
+go 1.21
+
+toolchain go1.22.1
 
 // required by the moby/buildkit
-replace github.com/docker/docker => github.com/docker/docker v20.10.3-0.20220414164044-61404de7df1a+incompatible
+replace github.com/docker/docker => github.com/docker/docker v26.0.0+incompatible
 
 require (
 	github.com/Masterminds/semver v1.5.0
@@ -12,7 +14,7 @@ require (
 	github.com/containerd/containerd v1.6.14
 	github.com/emicklei/dot v1.2.0
 	github.com/google/go-github/v35 v35.3.0
-	github.com/google/go-github/v48 v48.2.0
+	github.com/google/go-github/v60 v60.0.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/moby/buildkit v0.10.6
 	github.com/opencontainers/go-digest v1.0.0
@@ -50,6 +52,7 @@ require (
 	github.com/klauspost/compress v1.15.12 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
+	github.com/moby/docker-image-spec v1.3.1 // indirect
 	github.com/moby/locker v1.0.1 // indirect
 	github.com/moby/sys/signal v0.7.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
